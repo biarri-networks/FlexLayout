@@ -1,5 +1,8 @@
+0.8.5
+Remove previous model change listener when unmounting the Layout.
+
 0.8.4
-Added attribute 'enableTabScrollbar' to TabSet and Border nodes 
+Added attribute 'enableTabScrollbar' to TabSet and Border nodes
   Enabling this attribute will show a mini 'scrollbar' for the tabs to indicate the scroll position
   See the Demo apps default layout for an example.
 
@@ -9,7 +12,7 @@ Fix border 'show' attribute
 Removed code to adjust popout positions when loading
 
 0.8.2
-Updated dependencies 
+Updated dependencies
 Enabled use with React 19
 Removed strict mode from demo due to bug in React 19 (https://github.com/facebook/react/issues/29585) causing
   tabs to re-mount when moved
@@ -35,7 +38,7 @@ New:
 Breaking Changes:
   * addTabWithDragAndDrop signature has changed, must now be called from a drag start handler
   * moveTabWithDragAndDrop signature has changed, must now be called from a drag start handler
-  * removed addTabWithDragAndDropIndirect 
+  * removed addTabWithDragAndDropIndirect
   * removed onTabDrag (custom internal drag)
   * removed font prop, use css variables --font-size and --font-family instead
   * removed titleFactory, iconFactory props, use onRenderTab instead
@@ -48,7 +51,7 @@ Added arrow icon to edge indicators
 
 0.7.14
 Added attribute tabsetClassName to tab nodes, this will add the classname to the parent
-tabset when there is a single stretched tab. Updated mosaic layout in demo to use this to color headers.  
+tabset when there is a single stretched tab. Updated mosaic layout in demo to use this to color headers.
 
 0.7.13
 New attribute on tabset: enableSingleTabStretch will stretch a single tab to take up
@@ -63,14 +66,14 @@ Action.setActiveTabset can now take undefined to unset the active tabset.
 Added Tab attribute contentClassName to add a class to the tab content.
 
 0.7.11
-Added ITabSetRenderValues.overflowPosition to allow overflow button position to be 
+Added ITabSetRenderValues.overflowPosition to allow overflow button position to be
 specified, if left undefined, position will be after sticky buttons as before.
 New model attribute enableRotateBorderIcons, this allows the tab icons in the left and
 right borders to rotate with the text or not, default is true.
 Added additional class names to edge indicators
 
 0.7.10
-Fix for #399 - the overflow button in a tabset is now placed after 
+Fix for #399 - the overflow button in a tabset is now placed after
 any sticky buttons (additional buttons that stick to the last tab of a tabset)
 but before any other buttons.
 Enabled sticky buttons in border tabsets
@@ -115,7 +118,7 @@ Updated dependencies, in particular changed React peer dependency to React 18
 Made changes for React 18
 
 0.6.10
-fix for #312, chrome warning for wheel event listener 
+fix for #312, chrome warning for wheel event listener
 
 0.6.9
 fix for #308, Allow dragging within a maximized tabset
@@ -126,7 +129,7 @@ Added onTabSetPlaceHolder prop to render the tabset area when there are no tabs.
 0.6.7
 More css variables, added Underline theme, updated dependencies
 
-0.6.6 
+0.6.6
 fix for #296
 
 0.6.5
@@ -137,10 +140,10 @@ Code tidy
 Updated dependencies
 
 0.6.3
-Changed to using named rather than default import/exports, 
-this will require changing top level imports 
+Changed to using named rather than default import/exports,
+this will require changing top level imports
   from:
-    import FlexLayout from 'flexlayout-react'; 
+    import FlexLayout from 'flexlayout-react';
   to
     import * as FlexLayout from 'flexlayout-react';
 
@@ -169,7 +172,7 @@ Fixed copying stylesheet links for popout windows when cssRules throw exception.
 Added option, enableUseVisibility, to allow use of visibility: hidden rather than display:none for hiding elements.
 
 0.5.20
-Added Cypress Tests 
+Added Cypress Tests
 Fixed bug with tab icon not showing
 
 0.5.19
@@ -177,7 +180,7 @@ Added onRenderFloatingTabPlaceholder callback prop for rendering the floating ta
 Changed style sheets to use CSS custom properties (variables) for several values.
 Fix selected index in single empty tabset.
 Added onContextMenu callback prop for handling context menus on tabs and tabsets.
-Added onAuxMouseClick callback prop for handling mouse clicks on tabs and tabsets 
+Added onAuxMouseClick callback prop for handling mouse clicks on tabs and tabsets
 with alt, meta, shift keys, also handles center mouse clicks
 
 0.5.18
@@ -185,11 +188,11 @@ Added onRenderDragRect callback prop for rendering the drag rectangles
 New border attribute: enableAutoHide, to hide border if it has zero tabs
 
 0.5.17
-New global option, splitterExtra, to allow splitters to have an extended hit test areas. 
+New global option, splitterExtra, to allow splitters to have an extended hit test areas.
 This makes it easier to use narrow splitters.
 Added new TabNode attributes: borderWidth and borderHeight, these allow for individual border sizes for certain tabs.
 Fix for #263 - borders splitters not taking minimum size of center into account
-Improved algorithm for finding drop location 
+Improved algorithm for finding drop location
 Additional parameter: cursor, for onTabDrag
 
 0.5.16
@@ -200,14 +203,14 @@ New tabset attribute, enableClose, to close the tabset
 
 0.5.15
 Added new Layout prop: onTabDrag that allows tab dragging to be intercepted.
-Added example of onTabDrag in demo app, example shows a list where tabs can be dragged into, 
-moved in the list and dragged back out into the layout. 
+Added example of onTabDrag in demo app, example shows a list where tabs can be dragged into,
+moved in the list and dragged back out into the layout.
 Node id's that are not assigned a value are now auto-generated using a uuid rather than a rolling number
 (for example: previous id: #3, new id: #0c459064-8dee-444e-8636-eb9ab910fb27).
 Made toJson method of node public.
 
 0.5.14
-Fix an issue with copying styles for a floating window when using a CSS-in-JS solution 
+Fix an issue with copying styles for a floating window when using a CSS-in-JS solution
 Fix for #227 - edge rects are not moved if window is resized while dragging
 
 0.5.13
@@ -215,14 +218,14 @@ Added prop (realtimeResize) to make tabs resize as their splitters are dragged.
 Warning: this can cause resizing to become choppy when tabs are slow to draw.
 
 0.5.12
-New callback on Model to allow TabSet attributes to be set when a tab is moved in such a way 
+New callback on Model to allow TabSet attributes to be set when a tab is moved in such a way
 that it creates a new TabSet.
 Added config attributes to TabSet and Border
 Added headerButtons to ITabSetRenderValues, to allow different set of buttons to be applied to headed
 TabSets.
 
 0.5.11
-Added StickyButtons to onRenderTabSet render values to allow for implementation of Chrome style + button 
+Added StickyButtons to onRenderTabSet render values to allow for implementation of Chrome style + button
 Added example of + button to default layout in demo app
 
 0.5.10
@@ -261,7 +264,7 @@ Window title now updates when tab renamed
 Change classname strings to enum values
 TSLint replaced with ESLint
 Added Create-React-App (CRA) example
-New 'light' theme (lighter and without box shadows, gradients), 
+New 'light' theme (lighter and without box shadows, gradients),
     existing light theme renamed to 'gray'
 
 0.5.2
@@ -272,13 +275,13 @@ New closeType option for tabs
 The maximized tabset now sets others to display:none rather than use z-index
 Disable maximize if only one tabset
 Splitters will now default to 8 on desktop and 12 on mobile (so they can be tapped more easily)
-Close element is enlarged on mobile 
+Close element is enlarged on mobile
 
 0.5.1
 Various small fixes
 
 0.5.0
-Overflowing tabs now scroll to keep the selected tab in view, 
+Overflowing tabs now scroll to keep the selected tab in view,
 they can also be manually scrolled using the mouse wheel.
 Now works on scrolling page.
 NOTE: several css classes with names starting with flexlayout__tabset_header... have
