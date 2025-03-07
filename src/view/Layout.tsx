@@ -113,7 +113,7 @@ export class Layout extends React.Component<ILayoutProps> {
 
     /**
      * Adds a new tab by dragging an item to the drop location, must be called from within an HTML
-     * drag start handler. You can use the setDragComponent() method to set the drag image before calling this 
+     * drag start handler. You can use the setDragComponent() method to set the drag image before calling this
      * method.
      * @param event the drag start event
      * @param json the json for the new tab node
@@ -331,6 +331,10 @@ export class LayoutInternal extends React.Component<ILayoutInternalProps, ILayou
             this.resizeObserver?.unobserve(this.selfRef.current);
         }
         this.styleObserver?.disconnect();
+
+        if (this.previousModel !== undefined) {
+            this.previousModel.removeChangeListener(this.onModelChange); // stop listening to old model
+        }
     }
 
     render() {
@@ -689,7 +693,7 @@ export class LayoutInternal extends React.Component<ILayoutInternalProps, ILayou
             if (!tabs.has(nodeId)) {
                 // console.log("delete", nodeId);
                 element.remove(); // remove from dom
-                this.moveableElementMap.delete(nodeId); // remove map entry 
+                this.moveableElementMap.delete(nodeId); // remove map entry
             }
         }
     }
@@ -977,7 +981,7 @@ export class LayoutInternal extends React.Component<ILayoutInternalProps, ILayou
     public setDragNode = (event: DragEvent, node: Node & IDraggable) => {
         LayoutInternal.dragState = new DragState(this.mainLayout, DragSource.Internal, node, undefined, undefined);
         // Note: can only set (very) limited types on android! so cannot set json
-        // Note: must set text/plain for android to allow drag, 
+        // Note: must set text/plain for android to allow drag,
         //  so just set a simple message indicating its a flexlayout drag (this is not used anywhere else)
         event.dataTransfer!.setData('text/plain', "--flexlayout--");
         event.dataTransfer!.effectAllowed = "copyMove";
@@ -1252,7 +1256,7 @@ export interface ITabSetRenderValues {
     /** components that will be added at the end of the tabset */
     buttons: React.ReactNode[];
     /** position to insert overflow button within [...stickyButtons, ...buttons]
-     * if left undefined position will be after the sticky buttons (if any) 
+     * if left undefined position will be after the sticky buttons (if any)
      */
     overflowPosition: number | undefined;
 }
