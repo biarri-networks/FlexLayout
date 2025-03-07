@@ -330,11 +330,14 @@ export class LayoutInternal extends React.Component<ILayoutInternalProps, ILayou
         if (this.selfRef.current) {
             this.resizeObserver?.unobserve(this.selfRef.current);
         }
-        this.styleObserver?.disconnect();
-
         if (this.previousModel !== undefined) {
             this.previousModel.removeChangeListener(this.onModelChange); // stop listening to old model
         }
+        if (this.props.model !== undefined) {
+            this.props.model.removeChangeListener(this.onModelChange); // stop listening to old model
+        }
+        this.styleObserver?.disconnect();
+
     }
 
     render() {
