@@ -1,6 +1,6 @@
 {
     "name": "@biarri/flexlayout-react",
-    "version": "0.8.4",
+    "version": "0.8.5",
     "description": "A multi-tab docking layout manager",
     "main": "lib/index.js",
     "types": "./declarations/index.d.ts",
@@ -35,7 +35,7 @@
         "css": "sass style/rounded.scss  style/rounded.css && sass style/underline.scss style/underline.css && sass style/gray.scss style/gray.css && sass style/light.scss style/light.css && sass style/light.scss test/style/light.css && sass style/dark.scss style/dark.css"
     },
     "author": "Caplin Systems Ltd",
-    "repository": "https://github.com/caplin/FlexLayout",
+    "repository": "https://github.com/biarri-networks/FlexLayout",
     "license": "ISC",
     "peerDependencies": {
         "react": "^18.0.0 || ^19.0.0",
