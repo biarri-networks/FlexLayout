@@ -1,5 +1,5 @@
 {
-    "name": "flexlayout-react",
+    "name": "@biarri/flexlayout-react",
     "version": "0.8.5",
     "description": "A multi-tab docking layout manager",
     "main": "lib/index.js",
